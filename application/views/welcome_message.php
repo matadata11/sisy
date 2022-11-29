@@ -61,14 +61,26 @@
                     </form>
                     <div class="text-center mt-4 text-lg fs-6" style="margin-bottom:-20px;">
                         <p class="text-gray-600">Belum memiliki akun? <a href="auth-register.html" class="font-bold">Daftar</a>.</p>
+
+                        <?php
+                    if(!isset($login_button))
+                    {
+
+                    }
+                    else
+                    {
+                    echo '<div style="margin-left:-5px;">'.$login_button . '</div>';
+                    }
+                ?>
+                
                         <p><a class="font-bold" data-bs-toggle="modal" href="#reset">Reset Password?</a>.</p>
-                        <p>Dikembangkan Oleh <a href="https://notfound.id">Not Found Indonesia</a></p>
+                        <p>Dikembangkan Oleh <a href="https://notfound.id">Not Found Indonesia</a> <br> Suport <a href="https://matadata.tech">Matadata Technologi</a></p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7 d-none d-lg-block">
                 <div id="auth-right">
-
+                
                 </div>
             </div>
         </div>

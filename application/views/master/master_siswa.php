@@ -24,7 +24,6 @@
             
 
             <!-- role sekolah -->
-            <?php if ($this->session->userdata('level') == 'Ops' ) { ?>
                 <?php $no=1; foreach($siswa as $row): ?>
             <tr>
                 <td><?=$no++;?></td>
@@ -49,7 +48,6 @@
                 </td>
             </tr>
             <?php endforeach; ?>
-            <?php } ?>
 
             <!-- role admin cabang -->
             <?php if ($this->session->userdata('level') == 'Admin' ) { ?>
@@ -152,7 +150,7 @@
                                         }
                                     ?>
                                 </select>
-                                <input type="hidden" id="email-id-column" class="form-control" name="admin_input" value="<?=__session('fullname');?>" placeholder="ex. 201501015"/>
+                                <input type="hidden" id="email-id-column" class="form-control" name="admin_input" value="<?php $user_data = $this->session->userdata('user_data'); echo $user_data['name'];?>" placeholder="ex. 201501015"/>
                             </div>
                         </div>
                         <div class="col-md-6 col-12">

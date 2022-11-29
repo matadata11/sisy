@@ -32,7 +32,7 @@ class Login extends CI_Controller {
 							'login'		        => 'OK',
 						];
 						$this->session->set_userdata($data);
-						redirect('dashboard');
+						redirect('dashboarda');
 					}else{
 						// Password Salah
 						$this->session->set_flashdata('notif_false','Maaf, Password Yang Anda Masukan Salah.');

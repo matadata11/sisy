@@ -44,6 +44,6 @@ $route['checkdulu']            	        = 'auth/login/checklogin';
 $route['checkgtk']            	        = 'auth/login/checkgtk';
 $route['keluaraja']            	        = 'auth/login/logout';
 
-$route['default_controller']            = 'Welcome';
+$route['default_controller']            = 'Login';
 $route['404_override']                  = 'My404';
 $route['translate_uri_dashes']          = FALSE;

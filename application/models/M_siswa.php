@@ -33,13 +33,22 @@ class M_siswa extends CI_Model {
     // tampilan ops
     public function getSiswa()
     {
-        $this->db->where('kabupaten_id', $this->session->userdata('kabupaten_id'));
-        $this->db->select('*');
-        $this->db->join('mt_provinsi', 'mt_provinsi.id_provinsi = dt_siswa.provinsi_id');
-        $this->db->join('mt_kabupaten', 'mt_kabupaten.id_kabupaten = dt_siswa.kabupaten_id');
-            // $this->db->where('status', 'null');
-        $this->db->order_by('id_siswa', 'DESC');
-        return $this->db->get($this->_table)->result_array();
+        if(!isset($login_button))
+            {
+        
+                $user_data = $this->session->userdata('user_data');
+                $this->db->where('admin_input', $this->session->userdata('user_data')['name']);
+                $this->db->select('*');
+                $this->db->join('mt_provinsi', 'mt_provinsi.id_provinsi = dt_siswa.provinsi_id');
+                $this->db->join('mt_kabupaten', 'mt_kabupaten.id_kabupaten = dt_siswa.kabupaten_id');
+                    // $this->db->where('status', 'null');
+                $this->db->order_by('id_siswa', 'DESC');
+                return $this->db->get($this->_table)->result_array();
+                }
+                else
+                {
+                // echo '<div align="center">'.$login_button . '</div>';
+            }
     }
 
     // tampilan admin

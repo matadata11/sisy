@@ -325,7 +325,7 @@ class Master_siswa extends Admin_Controller {
                     'nisn'              => $nisn,
                     'atas_nama'         => $atas_nama,
                     'no_rek'            => $no_rek,
-                    'status'            => verifikasi
+                    'status'            => 'verifikasi'
 				];
 			}
 			$notif = $this->siswa->update($data, $id_siswa);
